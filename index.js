@@ -1,18 +1,18 @@
-const express = require('express'),
-const  app = express(),
-const  bodyParser = require('body-parser'),
-const  session = require('express-session'),
-const  methodOverride = require('method-override'),
-const  MongoStore = require('connect-mongo')(session),
+const express = require('express');
+const  app = express();
+const  bodyParser = require('body-parser');
+const  session = require('express-session');
+const  methodOverride = require('method-override');
+const  MongoStore = require('connect-mongo')(session);
 const  port = process.env.PORT || 3000;
 
 require('dotenv').config();
 
-app.ser('view engine', ejs);
+app.set('view engine', 'ejs');
 
 app.use(express.static('./public'));
 
-appp.use(bodyParser.urlencoded({
+app.use(bodyParser.urlencoded({
   extended: true }));
 app.use(bodyParser.json());
 
