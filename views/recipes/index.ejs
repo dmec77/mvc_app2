@@ -1,52 +1,30 @@
-<!DOCTYPE.html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-
-    <title>CHANGE THE TITLE</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.css"/>
-
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <%# <script src="/public/js/app.js"></script>
-
-
-    <link rel="stylesheet" href="/public/css/style.css"/>%>
-
+    <%- include ./partials/head.ejs %>
   </head>
-  <body>
 
-    <header>
-      <h1>PALEO RECIPES</h1>
-    </header>
+    <body>
+      <h1><%= recipe.recipe_name %></h1>
+      <article class="ingredients">
 
-    <aside>
-      <nav>
-        <ul>
+      </article>
 
-          <%# Link to the category in DB for each li%>
+      <article class="directions">
 
-        <li>Appetizers</li>
-        <li>Breakfast</li>
-        <li>Lunch</li>
-        <li>Dinner</li>
-        <li>Dessert</li>
-        <li>Cocktails</li>
-        </ul>
-          <button type="button" name="button" a href="/recipes.ejs">Search Recipes</button>
-<!--  Add New Recipe Button SEE forms.ejs-->
-<!--  Add FormModal SEE forms.ejs-->
+      </article>
 
-      </nav>
-    </aside>
+    <div class="comments">
+      <form method="POST" action="/recipes">
+          <div>
+        <textarea name="markdown" placeholder="Enter markdown here" rows="20" cols="50"></textarea>
+          </div>
+          <div>
+            <button id="submit" type="submit">Submit Markdown</button>
+          </div>
+      </form>
+        <%- content %>
+    </div>
 
-    <div id="main">
-    <h2>What Is The Paleo Diet?</h2>
-Assortment of paleo foodThe Paleo diet is the healthiest way you can eat because it is the ONLY nutritional approach that works with your genetics to help you stay lean, strong and energetic! Research in biology, biochemistry, Ophthalmology, Dermatology and many other disciplines indicate it is our modern diet, full of refined foods, trans fats and sugar, that is at the root of degenerative diseases such as obesity, cancer, diabetes, heart disease, Parkinson’s, Alzheimer’s, depression and infertility. – Robb Wolf
-   </div>
-
-  </body>
+    </body>
   <html>
