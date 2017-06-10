@@ -13,6 +13,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('./public'));
 
+app.use(logger('dev'));
+
 app.use(bodyParser.urlencoded({
   //this allows you to use name.[name] on ejs file when you call req.body...
   extended: true
