@@ -2,12 +2,12 @@
 
 const express = require('express'),
 
-// this is telling the app that when you see the word "router" below, to know that I am using express to do my routing, and in this instance is for anything in the "recipes" table
-const router = express.Router(),
+  // this is telling the app that when you see the word "router" below, to know that I am using express to do my routing, and in this instance is for anything in the "recipes" table
+  const router = express.Router(),
 
-// this is telling the app that when I use the word controller in my code below, I am asking you to access the "Controller" folder in my file tree
+    // this is telling the app that when I use the word controller in my code below, I am asking you to access the "Controller" folder in my file tree
 
-const controller = require('./controllers');
+    const controller = require('./controllers');
 
 // this is telling the app that when a request is made on ANY page ("/")then access this named Fx we created in the recipes/controller.js (inside the TOP Controllers Folder)
 

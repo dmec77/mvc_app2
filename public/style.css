@@ -1,4 +1,4 @@
-/*body {
+body {
 	background-image: url("http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/wood/wood-002665-light-sky-blue.jpg");
 }
 
@@ -43,9 +43,9 @@ nav {
   border: DeepPink 8px solid;
   float left;
   width: 200px;
-  height: 250px;
+  height: 350px;
   padding: 20px;
-  ;
+
 }
 
 #main {
@@ -73,8 +73,10 @@ span {
 	font-size: 20px;
 }
 
-li {
+ul {
 	color: navy;
+	width 100%;
+	height: 100%;
 	font-size: 20px;
 	font-weight: bold;
 
@@ -94,4 +96,4 @@ li {
 	-webkit-box-shadow: inset 0;
 		  box-shadow: inset 0;
 	background-color: #fddbab;
-}*/
+}

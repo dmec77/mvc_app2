@@ -1,10 +1,11 @@
-const express = require('express');
-const  app = express();
-const  bodyParser = require('body-parser');
-const  session = require('express-session');
-const  methodOverride = require('method-override');
-const  MongoStore = require('connect-mongo')(session);
-const  port = process.env.PORT || 3000;
+const express        = require('express');
+const app            = express();
+const bodyParser     = require('body-parser');
+const session        = require('express-session');
+const methodOverride = require('method-override');
+const logger         = require('morgan');
+const MongoStore     = require('connect-mongo')(session);
+const port           = process.env.PORT || 3000;
 
 require('dotenv').config();
 
@@ -13,7 +14,9 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
 app.use(bodyParser.urlencoded({
-  extended: true }));
+  //this allows you to use name.[name] on ejs file when you call req.body...
+  extended: true
+}));
 app.use(bodyParser.json());
 
 // app.use(metghodeOverride('_methode'));

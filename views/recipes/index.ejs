@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%- include ./partials/head.ejs %>
-  </head>
 
-    <body>
-      <h1><%= recipe.recipe_name %></h1>
-      <article class="ingredients">
+<head>
+  <%- include ./partials/head.ejs %>
+</head>
 
-      </article>
+<body>
+  <h1><%= recipe.recipe_name %></h1>
+  <article class="ingredients">
 
-      <article class="directions">
+  </article>
 
-      </article>
+  <article class="directions">
 
-    <div class="comments">
-      <form method="POST" action="/recipes">
-          <div>
+  </article>
+
+  <h1>All Beers</h1>
+<% recipes.forEach(recipe => { %>
+  <div class='beer-list-item'>
+    <h3><%= beer.name %>, <%= beer.rating %></h3>
+    <form method="POST" action="/">
+        <input type="hidden" name="recipe[recipe_name]" value="<%= recipe.name %>">
+        <input type="hidden" name="recipe[rating]" value="<%= recipe.rating %>">
+        <input type="hidden" name="recipe[id]" value="<%= recipe.id %>">
+        <button>save</button>
+    </form>
+  </div>
+<% }) %>
+
+  <div class="comments">
+    <form method="POST" action="/recipes">
+      <div>
         <textarea name="markdown" placeholder="Enter markdown here" rows="20" cols="50"></textarea>
-          </div>
-          <div>
-            <button id="submit" type="submit">Submit Markdown</button>
-          </div>
-      </form>
-        <%- content %>
-    </div>
+      </div>
+      <div>
+        <button id="submit" type="submit">Submit Markdown</button>
+      </div>
+    </form>
+    <%- content %>
+  </div>
 
-    </body>
-  <html>
+</body>
+<html>
