@@ -1,7 +1,7 @@
 const express        = require('express');
 const app            = express();
 const bodyParser     = require('body-parser');
-const session        = require('express-session');
+// const session        = require('express-session');
 const methodOverride = require('method-override');
 const logger         = require('morgan');
 // const MongoStore     = require('connect-mongo')(session);
@@ -37,7 +37,7 @@ app.use(methodOverride("_method"));
 // }));
 
 app.get("/", (req, res) => {
-	res.send("home.html");
+	res.render('./views/home');
 });
 
 app.listen(port, () => {
