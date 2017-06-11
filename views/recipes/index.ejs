@@ -15,10 +15,10 @@
 
   </article>
 
-  <h1>All Beers</h1>
+  <h1>All recipes</h1>
 <% recipes.forEach(recipe => { %>
-  <div class='beer-list-item'>
-    <h3><%= beer.name %>, <%= beer.rating %></h3>
+  <div class='recipe-list-item'>
+    <h3><%= recipe.name %>, <%= recipe.rating %></h3>
     <form method="POST" action="/">
         <input type="hidden" name="recipe[recipe_name]" value="<%= recipe.name %>">
         <input type="hidden" name="recipe[rating]" value="<%= recipe.rating %>">

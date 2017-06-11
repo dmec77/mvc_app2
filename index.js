@@ -36,8 +36,12 @@ app.use(methodOverride("_method"));
 //   }),
 // }));
 
+// app.get('/about', function (req, res) {
+//   res.send('about')
+// })
+
 app.get("/", (req, res) => {
-	res.redirect('/home');
+	res.sendFile('/home.ejs')
 });
 
 app.listen(port, () => {
