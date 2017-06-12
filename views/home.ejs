@@ -14,8 +14,11 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.css" />
 
-  <script src="../public/app.js"></script>
-  <link rel="stylesheet" href="../public/style.css" />
+  <%# <script src="app.js"></script>%>
+<script src="../public/app.js"></script>
+
+  <%# <link rel="stylesheet" href="style.css" />%>
+<link rel="stylesheet" href="../../public/style.css" />
 
 </head>
 
@@ -25,63 +28,77 @@
     <h1>PALEO RECIPES</h1>
   </header>
 
+    <div id="main">
+        <h2>What Is The Paleo Diet?</h2> Assortment of paleo foodThe Paleo diet is the healthiest way you can eat because it is the ONLY nutritional approach that works with your genetics to help you stay lean, strong and energetic! Research in biology, biochemistry, Ophthalmology, Dermatology
+        and many other disciplines indicate it is our modern diet, full of refined foods, trans fats and sugar, that is at the root of degenerative diseases such as obesity, cancer, diabetes, heart disease, Parkinson’s, Alzheimer’s, depression and infertility.
+        – Robb Wolf
+  </div>
+
   <aside>
     <nav>
       <ul id="cat">
-          <li>Appetizers</li>
-          <li>Breakfast</li>
-          <li>Lunch</li>
-          <li>Dinner</li>
-          <li>Dessert</li>
-          <li>Cocktails</li>
+<!--           <li href="recipes.ejs">Appetizers</li>
+          <li href="recipes.ejs">Breakfast</li>
+          <li href="recipes.ejs">Lunch</li>
+          <li href="recipes.ejs">Dinner</li>
+          <li href="recipes.ejs">Dessert</li>
+          <li href="recipes.ejs">ocktails</li> -->
+
+          <li><a href="recipes/index.ejs">Appetizers</a></li>
+          <li><a href="recipes/index.ejs">Breakfast</a></li>
+          <li><a href="recipes/index.ejs">Lunch</a></li>
+          <li><a href="recipes/index.ejs">Dinner</a></li>
+          <li><a href="recipes/index.ejs">Dessert</a></li>
+          <li><a href="recipes/index.ejs">Cocktails</a></li>
       </ul>
     </nav>
   </aside>
-    <button id="formModal" type="button" class="btn btn-primary btn block" datat-toggle="modal" data-target="#formModal">Add New Recipe</button>
 
-      <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
+    <button id="myBtn">Add New Recipe</button>
 
-            <form method="post" action="add">
+        <div id="myModal" class="modal">
 
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Add Recipe</h4>
-                </div>
+        <div class="modal-content">
 
-                <div class="modal-body">
+            <span class="close">&times;</span>
+      <form method="POST" action="/" data-parsley-validate>
 
+            <div class="margin-top-20">
+              <input name="recipes[recipe_name]" type="text" class="form-control" placeholder="Recipe Title" />
+            </div>
 
-                    <div class="form-group">
-                      <label>Add Recipe</label>
-                      <input type="text class=form-control" name="name"/>
-                    </div>
+            <div class="margin-top-20">
+              <input name="recipes[category]" type="text" class="form-control" placeholder="Category" />
+            </div>
 
-                    <div class="form-group">
-                      <label>Ingredients</label>
-                      <textarea class="form-control" name="ingredients"></textarea>
-                    </div>
-<div class="form-group">
-                      <label>Directions</label>
-                      <textarea class="form-control" name="directions"></textarea>
-                    </div>
+            <div class="margin-top-20">
+              <input name="recipes[main_ingredient]" type="email" class="form-control" placeholder="Main ingredient" />
+            </div>
 
-                  </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <input type="submit" class="btn btn-primary" value="Save"/>
-                  </div>
-              </form>
+            <div class="margin-top-20">
+              <input name="recipes[keyword]" type="password" class="form-control" placeholder="Keyword" />
+            </div>
+
+            <div class="margin-top-20">
+              <input name="recipes[dish_img]" type="password" class="form-control" placeholder="Image" />
+            </div>
+
+      <!--       <div class="margin-top-20">
+              <input name="recipes[recipe_name]" type="text" class="form-control" placeholder="Username" />
+            </div>
+
+            <div class="margin-top-20">
+              <textarea name="recipes[recipe_name]" class="form-control" placeholder="About Me"></textarea>
+            </div> -->
+
+            <div class="margin-top-20">
+              <button type="submit" class="btn btn-primary">Submit Recipe</button>
+            </div>
+    </form>
           </div>
         </div>
       </div>
 
-  <div id="main">
-    <h2>What Is The Paleo Diet?</h2> Assortment of paleo foodThe Paleo diet is the healthiest way you can eat because it is the ONLY nutritional approach that works with your genetics to help you stay lean, strong and energetic! Research in biology, biochemistry, Ophthalmology, Dermatology
-    and many other disciplines indicate it is our modern diet, full of refined foods, trans fats and sugar, that is at the root of degenerative diseases such as obesity, cancer, diabetes, heart disease, Parkinson’s, Alzheimer’s, depression and infertility.
-    – Robb Wolf
-  </div>
 
 </body>
 <html>

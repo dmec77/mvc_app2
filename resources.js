@@ -6,11 +6,11 @@ const express = require('express');
 const router = express.Router();
 
 
-// this is telling the app that when a route is made on a URL that has /{whatever word is here}, then we need to grab info from the file in our tree that is inside the controllers folder within the user folder
-
 router.get('/', (req, res) => {
-  res.send( './home.ejs');
+  res.render( 'home');
 })
+
+// this is telling the app that when a route is made on a URL that has /{whatever word is here}, then we need to grab info from the file in our tree that is inside the controllers folder within the user folder
 
 // router.use('/users', require('./controllers/users'));
 
