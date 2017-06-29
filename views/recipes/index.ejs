@@ -16,11 +16,11 @@
   </article>
 
   <h1>All recipes</h1>
-<% recipes.forEach(recipe => { %>
+<% recipes.forEach(category => { %>
   <div class='recipe-list-item'>
-    <h3><%= recipe.name %>, <%= recipe.rating %></h3>
-    <form method="POST" action="/">
-        <input type="hidden" name="recipe[recipe_name]" value="<%= recipe.name %>">
+    <h3><%= category[recipe_name]%></h3>
+    <form method="POST" action="/recipes">
+        <input type="hidden" name="category[recipe_name]" value="<%= recipe.name %>">
         <input type="hidden" name="recipe[rating]" value="<%= recipe.rating %>">
         <input type="hidden" name="recipe[id]" value="<%= recipe.id %>">
         <button>save</button>

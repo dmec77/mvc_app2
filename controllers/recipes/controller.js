@@ -8,7 +8,7 @@ controller.index = (req, res) => {
       res.render('recipes/index', {
         //????*****????? this is saying that based on the data we are pulling above, we will use "recipe_data" to represent that data.
 
-        //the name before the colon should match what will be replaced on th ejs file, and the "recipe_data" is what data was gathered to be displayed(so use "recipe."" in the place you want the info to change, and based on the FX above it will change to what ever "recipe_data" Fx comes up with)
+        //the name before the colon should match what will be replaced on th ejs file, and the "category" is what data was gathered to be displayed(so use "recipe."" in the place you want the info to change, and based on the FX above it will change to what ever "cat_data" Fx comes up with)
         recipe: recipe_data
       });
     })
@@ -16,8 +16,8 @@ controller.index = (req, res) => {
 };
 
 controller.index = (req, res) => {
-  Recipe.findByCat()
-    .then((cat_recipe) => {
+  Recipe.findAll()
+    .then((category) => {
       res.render('./recipes/index', {
         category: cat_recipe
       });
